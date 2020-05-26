@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Home</a>
+    </nav>
+    <center>
+          <div class="container">
+              <h2>Book a Ticket</h2><br><br>
+            <form method="POST">
+                    {% csrf_token %}
+               
+                    <label for="loginname">Login User Name:</label>
+                    <input type="text" id="loginname" name="loginname" required>
+                    <br><br>
+                    <label for="trainno">Train No:</label>
+                    <input type="text" id="trainno" name="trainno" required>
+                    <br><br>
+                    <label for="trainname">Train Name:</label>
+                    <input type="text" id="trainname" name="trainname" required>
+                    <br><br>
+                    <label for="journeyDate">Journey Date:</label>
+                    <input type="date" id="journeyDate" name="journeyDate" required>
+                    <br><br>
+                    <label for="from">From:</label>
+                    <input type="text" id="from" name="from" required>
+                    <br><br>
+                    <label for="to">To:</label>
+                    <input type="text" id="to" name="to" required>
+                    <br><br>
+                    <label for="mobile">Mobile No:</label>
+                    <input type="text" id="mobile" name="mobile" pattern="[6-9]{1}[0-9]{9}" required>
+                    <br><br>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <br><br>
+                    <label for="nationality">Nationality:</label>
+                    <input type="text" id="nationality" name="nationality" required>
+                    <br><br>
+                    <label for="gender">Gender:</label>
+                    <select name="gender" id="gender">
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="others">Others</option>
+                    </select><br><br>
+                    <label for="age">Age:</label>
+                    <input type="text" id="age" name="age" required>
+                    <br><br>                    
+                    <label for="cobirth">Choice of Berth:</label>
+                    <select name="cob" id="cob">
+                      <option value="lower">Lower</option>
+                      <option value="middle">Middle</option>
+                      <option value="upper">Upper</option>
+                    </select><br><br>
+                    <input class="btn btn-primary" type="submit" value="Book Now"><br><br>
+                
+            </form>
+          </div>
+    </center>
+  </body>
+</html>

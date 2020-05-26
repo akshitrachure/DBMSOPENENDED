@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+  <meta charset="utf-8">
+  <title>Train Details</title>
+
+  <style media="screen">
+  a{
+    float: right;
+    padding-bottom:10px;
+  }
+  .btn{
+    width: 10%;
+
+    border: 2px solid black;
+
+    color: black;
+    padding: 5px;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 10px;
+  }
+  .btn:hover{
+    font-weight: bold;
+  }
+  </style>
+  <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Home</a>
+  </nav>
+  <div class="container">
+    
+    <center><br><br>
+    <h2 class = "jumbotron">Train Details</h2>
+    
+    <table class = "table table-bordered table-sm" border="2">
+      <thead class = "thead-light">
+        <tr>
+         
+          <th>&nbsp;&nbsp;&nbsp;Train No.</th>
+          <th>&nbsp;&nbsp;&nbsp;Train Name</th>
+          <th>&nbsp;&nbsp;&nbsp;From</th>
+          <th>&nbsp;&nbsp;&nbsp;To</th>
+          <th>&nbsp;&nbsp;&nbsp;Arrival Time</th>
+          <th>&nbsp;&nbsp;&nbsp;Departure Time</th>
+          <!-- <th>&nbsp;&nbsp;&nbsp;Overall_Rate</th>
+          <th>&nbsp;&nbsp;&nbsp;Hands_On</th>
+          <th>&nbsp;&nbsp;&nbsp;Pace</th>
+          <th>&nbsp;&nbsp;&nbsp;Explanation</th>
+          <th>&nbsp;&nbsp;&nbsp;Doubt_clearing</th>
+          <th>&nbsp;&nbsp;&nbsp;Suggestions</th> -->
+        </tr>
+      </thead>
+
+      {% for data in data %}
+                <tr>
+                  <td>{{data.train_no}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;{{data.train_name}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;{{data.From}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;{{data.to}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.arrival_time}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;{{data.departure_time}}</td>
+                  <!-- <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.course}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.overall_rate}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.hands_on}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;{{data.pace}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.explanation}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.doubt_clearing}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.suggestions}}</td> -->
+
+                </tr>
+      {% endfor %}
+    </table>
+ 
+  </div>
+
+
+
+</body>
+</html>

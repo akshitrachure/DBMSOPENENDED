@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Home</a>
+    </nav>
+    <center>
+      {% if messages %} 
+            {% for message in messages %}
+            <center>
+                <!-- <div class="alert {% if message.tags %} alert-{{message.tags}}{% endif %}" role="alert"> -->
+                <div class="alert alert-primary" role="alert">
+                    <b><i>{{ message }}</i></b>
+                </div>
+            </center>
+           
+            {% endfor %}
+        {% endif %}
+          <div class="container">
+              <h2>Login</h2><br><br>
+            <form method="POST">
+                    {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <br><br>
+                    <label for="pass">Password:</label>
+                    <input type="password" id="pass" name="pass" required>
+                    <br><br>
+                    <input class="btn btn-success" type="submit" value="Login"><br><br>
+                    <a href="/signup">New User ?</a>
+                </div>
+            </form>
+          </div>
+    </center>
+  </body>
+</html>
